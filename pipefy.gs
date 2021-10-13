@@ -50,7 +50,7 @@ function extract_chapters_labels(labels) {
     var str_labels = '' // String of concatenated labels
     var first_label = true;
 
-    for (label of labels) {
+    for (var label of labels) {
         if (label['name'] == 'Entregável') {
             continue;
         }
@@ -80,7 +80,7 @@ function extract_assignees(card_data) {
     var concatenated_str = '';
     var first_name = true;
 
-    for (assignee of card_data['assignees']) {
+    for (var assignee of card_data['assignees']) {
         if (!first_name) {
             concatenated_str += ',';
         }
@@ -103,7 +103,7 @@ function extract_assignees(card_data) {
  */
 function extract_field_data(card_data, field_name) {
     // Iterate through all the fields in the card and return the value of the target one
-    for (field of card_data['fields']) {
+    for (var field of card_data['fields']) {
         if (field['name'] == field_name) {
             return field['value'];
         }
@@ -122,7 +122,7 @@ function extract_field_data(card_data, field_name) {
 function extract_phase_history_date(card_data, phase_name) {
 
     // Iterate through the pahses in the phase history field of the card
-    for (phase of card_data['phases_history']) {
+    for (var phase of card_data['phases_history']) {
 
         // If the target phase is found, try to return 
         if (phase['phase']['name'] == phase_name) {
@@ -205,7 +205,7 @@ function update_subdeliverables(card_data, project_id) {
  */
 function is_deliverable(card_data) {
 
-    for (label of card_data['labels']) {
+    for (var label of card_data['labels']) {
         if (label['name'] == 'Entregável') {
             return true;
         }
@@ -228,7 +228,7 @@ function update_project_data(project_id) {
     var cards_data = get_pipe_data(project_id, user_token);
 
     // Iterate through all the cards
-    for (card of cards_data) {
+    for (var card of cards_data) {
         card = card['node'];
 
         // If the card is a deliverable, update the deliverable's sheets, Otherwise, update the subdeliverable's sheets
@@ -253,7 +253,7 @@ function update_sheets_data() {
 
     // Now we need to get a list of all projects, but only update the data for the active ones
     var projects = spread_sheets.getRange('Projetos!A:B').getValues();
-    for (project of projects) {
+    for (var project of projects) {
 
         if (project[0] == 'Ativo') {
             update_project_data(project[1]);

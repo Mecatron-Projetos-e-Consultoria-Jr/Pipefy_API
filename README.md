@@ -98,8 +98,8 @@ automation status of the las 7 days) and the `Project Settings`:
   code](https://github.com/Mecatron-Projetos-e-Consultoria-Jr/Pipefy_API/blob/9ee4350cdb954a6044a2158860b4b71822612162/src/pipefy.gs#L226), to match you API Key: 
   ![](docs/img/line_of_code.png)
 
-    - $OBS$: The above credential does not work anymore !!!
-    - $OBS^2$: You need to keep the `Bearer ` part on the code !
+    - OBS: The above credential does not work anymore !!!
+    - OBS2: You need to keep the `Bearer ` part on the code !
 
 
 ## Pipefy
@@ -111,5 +111,6 @@ automation status of the las 7 days) and the `Project Settings`:
 ### How to get Pipe ID
 - Once you created you pipe, most preferably by coping another pipe (e.g Aquecetron's pipe) as a template to ensure that all the structure is compatible with the automation, you simply go to the
   browser bar and copy the numeric value: 
-  ![](docs/img/url.png)
+
+![](docs/img/url.png)
 - And there we have our Pipe ID.

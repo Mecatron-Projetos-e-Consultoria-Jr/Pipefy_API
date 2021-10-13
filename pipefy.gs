@@ -55,7 +55,7 @@ function extract_chapters_labels(labels) {
             continue;
         }
         else {
-            // If it is the first lable, dont add the comma 
+            // If it is the first label, dont add the comma 
             if (!first_label) {
                 str_labels += ',';
             }
@@ -174,8 +174,10 @@ function update_subdeliverables(card_data, project_id) {
     // Get the ids of all sub-deliverables already on the database 
     var sub_deliverables = SpreadsheetApp.getActive().getRange('Subentregáveis!B:B').getValues();
 
-    // Variables that will be saved to the spread sheet
+    // Get the sheet in which the data will be recorded
     var sheet = SpreadsheetApp.getActive().getSheetByName('Subentregáveis');
+
+    // Variables that will be saved to the spread sheet
     var current_phase = card_data['current_phase']['name'];
     var starting_date = extract_phase_history_date(card_data, 'Fazendo Hoje');
     var end_date = (current_phase == 'Done') ? card_data['phases_history'].pop()['firstTimeIn'].split('T')[0] : '-';

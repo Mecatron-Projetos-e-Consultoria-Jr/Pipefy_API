@@ -7,6 +7,9 @@ As described in more detail down the line, this project runs as a Google Script 
 - It basically gets, trough pipefy's GraphQl API, the cards and their data for each project pipe [set as active in the Spreadsheet's Main Page](####-main-page). From their, they are able to differentiate rather a
 card is a deliverable or a sub-deliverable through their tags (deliverables have the `Entregável` label) and save the important information in the corresponding sheet.
 
+- Although this automation may be really specific to our needs, the code was writtern as modulas as possible, so you can interface with Pipefy's API the way it suits your needs.
+
+
 ## Google Sheets
 - Our spreadsheet is divided into 7 different pages, where 4 of them are related to google forms (those of which we are not going to cover here) and 3 that are directly related to the pipefy
 automation, those being:
@@ -102,4 +105,11 @@ automation status of the las 7 days) and the `Project Settings`:
 ## Pipefy
 
 ### SetUp and API
+- To get a new API key you can go to [this website](https://app.pipefy.com/tokens) to get a new access token to pipefy's API.
+- One important thing to keep in mind is that the account in which you made the login and generated the API Key will need to be part of all the projects pipes to be able to get the data from them.
+
 ### How to get Pipe ID
+- Once you created you pipe, most preferably by coping another pipe (e.g Aquecetron's pipe) as a template to ensure that all the structure is compatible with the automation, you simply go to the
+  browser bar and copy the numeric value: 
+  ![](docs/img/url.png)
+- And there we have our Pipe ID.

@@ -59,7 +59,7 @@ Column Name | Description
 
 
 #### Sub-deliverables Page
-![](docs/img/Subdeliverables.png)
+![](docs/img/subdeliverables.png)
 - The sub-deliverables sheet has the following structure:
 
 Column Name | Description
